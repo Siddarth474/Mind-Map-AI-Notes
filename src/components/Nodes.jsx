@@ -5,6 +5,7 @@ import Avatar_icon from '../assets/avatar2.png';
 import { MindMapContext } from '../context/MindMapContext';
 import InputPop from './InputPop';
 import CustomNode from './CustomNode';
+import Footer from './Footer';
 
 const Nodes = ({theme}) => {
 
@@ -19,10 +20,10 @@ const Nodes = ({theme}) => {
     };
     
   return (
-    <div className={`w-screen h-[89vh] ${theme === 'dark' ? 'bg-[#161A20]' : 'bg-white'} `}>    
+    <div className={`flex flex-col h-screen ${theme === 'dark' ? 'bg-[#161A20]' : 'bg-white'} `}>    
       {nodes.length === 0 ? 
       <div onClick={() => setShowInput(true)} 
-      className='fixed top-[35%] left-1/2 transform -translate-x-1/2 -translate-y-1/2
+      className='fixed z-50 top-[35%] left-1/2 transform -translate-x-1/2 -translate-y-1/2
       flex flex-col justify-center items-center p-5 rounded-full bg-lime-500
       w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] hover:scale-105 duration-100'> 
         <img src={Avatar_icon} className='w-[90px] sm:w-[130px] ' />
@@ -31,7 +32,8 @@ const Nodes = ({theme}) => {
 
       {showInput ? <InputPop /> : <></>} 
 
-      {nodes.length > 0 ? 
+      <div className='flex-1 w-full relative overflow-hidden'>
+        {nodes.length > 0 ? 
         <ReactFlow
         nodes={nodes} 
         edges={edges}
@@ -59,6 +61,8 @@ const Nodes = ({theme}) => {
               }} />
         </ReactFlow>
        : <></>}
+      </div>
+      <Footer />
     </div>
   )
 }

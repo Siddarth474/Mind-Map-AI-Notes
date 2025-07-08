@@ -10,7 +10,6 @@ function App() {
   return (
     <>
     <Nodes theme={theme}/>
-    <Footer/>
     <Sidebar theme={theme} setTheme={setTheme}/>
     </>
   )
