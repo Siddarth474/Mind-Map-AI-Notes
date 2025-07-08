@@ -19,7 +19,7 @@ const Nodes = ({theme}) => {
     };
     
   return (
-    <div className={`w-screen h-[91vh] ${theme === 'dark' ? 'bg-[#161A20]' : 'bg-white'} `}>    
+    <div className={`w-screen h-[90%] ${theme === 'dark' ? 'bg-[#161A20]' : 'bg-white'} `}>    
       {nodes.length === 0 ? 
       <div onClick={() => setShowInput(true)} 
       className='fixed top-[35%] left-1/2 transform -translate-x-1/2 -translate-y-1/2
