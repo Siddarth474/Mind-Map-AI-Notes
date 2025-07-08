@@ -6,7 +6,7 @@ const Footer = () => {
   const {setShowInput, setToggle, nodes} = useContext(MindMapContext);
 
   return (
-    <div className='h-[10%] bg-lime-500 p-4 flex justify-between items-center relative'>
+    <div className='bg-lime-500 p-4 flex justify-between items-center relative'>
         <h1 className='text-lg sm:text-2xl font-semibold'>Mind Map</h1>
         
         {nodes.length ? 
